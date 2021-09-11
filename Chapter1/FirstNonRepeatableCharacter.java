@@ -10,7 +10,7 @@ class FirstNonRepeatableCharacter {
         String a2 = "abcde";        //a 1st nonrepeated
         String a3 = "abcdcbae";     //d 1st nonrepeated
         String a4 = "abccbae";     //e 1st nonrepeated
-        String a5 = "💕💕🐱💖🎂🎂💻";
+        String a5 = "💕💕💖🎂🎂💻";
         
         findFirstNonRepeatedCharacter(a1).ifPresentOrElse(System.out::println, () -> System.out.println(Character.MIN_VALUE));
         findFirstNonRepeatedCharacter(a2).ifPresent(System.out::println);
@@ -18,6 +18,7 @@ class FirstNonRepeatableCharacter {
         findFirstNonRepeatedCharacter(a4).ifPresent(System.out::println);
         
         findFirstNonRepeatedCodePoint(a5).ifPresent(System.out::println);
+
 
     }
     
@@ -50,7 +51,15 @@ class FirstNonRepeatableCharacter {
 
     // }
     
-    public static Optional<Character> findFirstNonRepeatedCharacter(String s) {
+    public static String reverseLetters(String s) {
+        
+        return s.chars()
+                    .mapToObj(String::valueOf)
+                    .reduce("", (acc, cur) -> cur + acc, (s1, s2) -> s1 + s2);
+
+    }
+    
+        public static Optional<Character> findFirstNonRepeatedCharacter(String s) {
         
         // Map<Character, Long> charMap = new LinkedHashMap<>();
         
@@ -64,7 +73,6 @@ class FirstNonRepeatableCharacter {
                     .map(entry -> entry.getKey())
                     .findFirst();
       
-
     }
     
     public static Optional<String> findFirstNonRepeatedCodePoint(String s) {
