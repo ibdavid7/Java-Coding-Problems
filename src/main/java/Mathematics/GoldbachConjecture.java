@@ -1,4 +1,4 @@
-package main.java.Mathmatics;
+package main.java.Mathematics;
 
 import java.util.ArrayList;
 import java.util.Arrays;
