@@ -5,8 +5,10 @@ import {Redirect, Route, Switch} from "react-router-dom";
 import Rentals from "./components/rentals";
 import Customers from "./components/customers";
 import NotFound from "./components/common/notFound";
-import './App.css';
 import movieForm from "./components/movieForm";
+import login from "./components/loginForm";
+import RegisterForm from "./components/registerForm";
+import './App.css';
 
 function App() {
     return (
@@ -14,6 +16,8 @@ function App() {
             <NavBar/>
             <main className="container">
                 <Switch>
+                    <Route path="/register" component={RegisterForm}/>
+                    <Route path="/login" component={login}/>
                     <Route path="/movies/:id" component={movieForm}/>
                     <Route path="/movies" component={Movies}/>
                     <Route path="/customers" component={Customers}/>
