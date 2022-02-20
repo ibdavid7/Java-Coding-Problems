@@ -24,7 +24,6 @@ public class CashiersAlgorithm {
             denominationsBigDecimal[i] = BigDecimal.valueOf(denominations[i]);
         }
 
-
         int[] coinCount = new int[4];
 
         int index = 0;
